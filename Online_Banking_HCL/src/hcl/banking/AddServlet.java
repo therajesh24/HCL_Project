@@ -29,6 +29,7 @@ public class AddServlet  extends HttpServlet {
 			//Execute SQL Query
 			myRes = myStmt.executeQuery("select * from accounts");
 			//process the result
+			out.println("<html><body>");
 			if(myRes.next())
 			{
 			out.println("<br>Name			:" + myRes.getString("NAME_")); //printing account details
@@ -47,6 +48,7 @@ public class AddServlet  extends HttpServlet {
 				out.println(myRes.getString("T4"));
 				out.println(myRes.getString("T5"));
 			}
+			out.println("</body></html>");
 			out.println("<br><form action = \"Transfer\"><input type = \"submit\" value = \"Transfer Money\"></form>");
 		}
 		catch(Exception exc) {
